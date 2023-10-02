@@ -3,14 +3,14 @@ import csv
 from typing import Optional, Callable, List, Dict
 
 
-def reader(path: str) -> list[list[str]]:
+def reader(path: str) -> List[List[str]]:
     """
     Reads all rows of the file except header
     """
 
     data = []
     with open(path, newline="", encoding="utf-8") as file:
-        reader = csv.reader(file, delimiter=";", skipinitialspace=True)
+        reader = csv.reader(file, delimiter=";")
         next(reader)
         for row in reader:
             data.append(row)
